@@ -1,0 +1,1 @@
+export function connectRoom(id:number,onMessage:(x:any)=>void){const proto=location.protocol==='https:'?'wss':'ws';const ws=new WebSocket(`${proto}://${location.host}/ws/rooms/${id}`);ws.onmessage=e=>onMessage(JSON.parse(e.data));return ws}
