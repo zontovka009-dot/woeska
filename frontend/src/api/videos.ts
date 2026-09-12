@@ -1,0 +1,1 @@
+import {api} from './client'; export const videos={resolve:(url:string)=>api<any>(`/api/videos/resolve?url=${encodeURIComponent(url)}`),youtube:(q:string)=>api<any[]>(`/api/videos/search/youtube?q=${encodeURIComponent(q)}`),vk:(q:string)=>api<any[]>(`/api/videos/search/vk?q=${encodeURIComponent(q)}`)};
