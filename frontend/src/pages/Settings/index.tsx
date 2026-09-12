@@ -1,0 +1,1 @@
+export default function Settings(){return <><h1>Настройки</h1><div className="settings"><div>Тема <b>Neon Dark</b></div><div>Уведомления <b>Telegram</b></div><div>Версия <b>Wathis 1.0</b></div></div></>}
