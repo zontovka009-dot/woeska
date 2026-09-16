@@ -1,0 +1,1 @@
+import {api} from './client'; export const invitations={list:()=>api<any[]>('/api/invitations'),send:(sid:number,id:string)=>api<any>(`/api/invitations/${sid}/${id}`,{method:'POST'}),accept:(id:number)=>api<any>(`/api/invitations/${id}/accept`,{method:'POST'}),decline:(id:number)=>api<any>(`/api/invitations/${id}/decline`,{method:'POST'})};

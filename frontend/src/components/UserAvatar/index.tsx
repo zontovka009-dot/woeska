@@ -1,0 +1,1 @@
+const map:any={violet:'✦',cyan:'◈',pink:'◆',blue:'●',green:'✚',orange:'✧',ghost:'☾',fox:'◉'}; export function UserAvatar({user,size='md'}:any){return <div className={`avatar avatar-${size} av-${user?.avatar_key||'violet'}`}>{map[user?.avatar_key]||'✦'}</div>}
