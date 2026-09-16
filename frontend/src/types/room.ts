@@ -1,1 +1,0 @@
-export type Member={id:number;username?:string;name:string;role:string;avatar_url?:string}; export type Room={id:number;title:string;invite_code:string;owner_id:number;provider?:string;video_id?:string;video_url?:string;video_title?:string;playing:boolean;position:number;playback_version:number;members:Member[]};

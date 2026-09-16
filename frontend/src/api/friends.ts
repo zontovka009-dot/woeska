@@ -1,1 +1,0 @@
-import {api} from './client'; export const friends={list:(u:number)=>api<any[]>(`/api/friends?user_id=${u}`),add:(u:number,name:string)=>api<any>(`/api/friends/${encodeURIComponent(name)}?user_id=${u}`,{method:'POST'})};

@@ -1,1 +1,0 @@
-const base=import.meta.env.VITE_API_URL||''; export async function api<T>(path:string,options:RequestInit={}){const r=await fetch(base+path,{headers:{'Content-Type':'application/json',...(options.headers||{})},...options}); if(!r.ok) throw new Error(await r.text()); return r.json() as Promise<T>}
