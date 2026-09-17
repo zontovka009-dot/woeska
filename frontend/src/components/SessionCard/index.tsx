@@ -1,0 +1,1 @@
+import {useNavigate} from 'react-router-dom'; export function SessionCard({session}:any){const n=useNavigate();return <button className="session-card" onClick={()=>n(`/room/${session.id}`)}><div className="session-icon">▶</div><div><b>{session.title}</b><span>{session.video_title||'Видео не выбрано'}{session.provider?` · ${session.provider}`:''}</span></div><i>›</i></button>}
