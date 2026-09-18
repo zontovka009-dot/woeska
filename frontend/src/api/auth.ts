@@ -1,2 +1,0 @@
-import {api,setToken} from './client';
-export const auth={register:async(p:any)=>{const r=await api<any>('/api/auth/register',{method:'POST',body:JSON.stringify(p)});setToken(r.token);return r.user},login:async(p:any)=>{const r=await api<any>('/api/auth/login',{method:'POST',body:JSON.stringify(p)});setToken(r.token);return r.user},me:()=>api<any>('/api/auth/me'),logout:async()=>{try{await api('/api/auth/logout',{method:'POST'})}finally{setToken('')}},profile:(p:any)=>api<any>('/api/auth/profile',{method:'PATCH',body:JSON.stringify(p)})};
