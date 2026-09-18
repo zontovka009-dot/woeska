@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: wathis
+      POSTGRES_USER: wathis
+      POSTGRES_PASSWORD: wathis
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+  backend:
+    build: ./backend
+    env_file: .env
+    depends_on: [postgres, redis]
+    ports:
+      - "8000:8000"
+
+  bot:
+    build: ./bot
+    env_file: .env
+    depends_on: [backend]
+
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports:
+      - "80:80"
+
+volumes:
+  postgres_data:
