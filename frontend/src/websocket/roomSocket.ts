@@ -1,1 +1,0 @@
-export function roomSocket(id:number,token:string,onMessage:(x:any)=>void){const proto=location.protocol==='https:'?'wss':'ws';const ws=new WebSocket(`${proto}://${location.host}/ws/rooms/${id}?token=${encodeURIComponent(token)}`);ws.onmessage=e=>{try{onMessage(JSON.parse(e.data))}catch{}};return ws;}
