@@ -1,0 +1,1 @@
+export type User={id:number;public_id:string;nickname:string;avatar_key:string;avatar_url?:string};
